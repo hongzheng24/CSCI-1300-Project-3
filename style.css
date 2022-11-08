@@ -1,0 +1,171 @@
+:root {
+    --main-color1: white;
+    --main-color2: black;
+    --main-color3: gray;
+    --accent-color1: #6E52D1;
+    --accent-color2: #47CDAE;
+    --accent-color3: #FCA254;
+    --accent-color4: #F85F75;
+    --accent-color5: #4873D9;
+}
+
+html {
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 0; /*TODO: FIGURE OUT MARGIN VS PADDING*/
+}
+
+/* The navigation bar */
+.navbar {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    overflow: hidden;
+    background-color: var(--main-color1); 
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 90%; /* Full width */
+    height: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.navbar-title {
+    height: fit-content;
+}
+
+.navbar-line {
+    margin-top: -1.2rem;
+    
+    width: 95%;
+    height: 1px;
+    background-color: black;
+    line-height: 80%;
+}
+
+.navbar-item-container {
+    margin-left: auto;
+    align-self: center;
+    max-width: 70%;
+    
+}
+  
+/* Links inside the navbar */
+.navbar-item {
+
+    display: inline-block;
+    position: relative;
+    color: var(--main-color2);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 90%;
+}
+
+/* Link animation */
+
+
+.navbar-item::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    transform: scaleX(0);
+    height: 3px;
+    bottom: 0;
+    left: 20%; /* CHANGE */
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.navbar-item:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Change background on hover of Introduction nav item */
+#navbar-item-intro {
+    color: var(--accent-color1);
+}
+#navbar-item-intro::after {
+    background-color: var(--accent-color1);
+}
+
+
+
+/* Change background on hover of p1 nav item */
+#navbar-item-p1 {
+    color: var(--accent-color2);
+}
+
+#navbar-item-p1::after {
+    background-color: var(--accent-color2);
+}
+
+#navbar-item-p2 {
+    color: var(--accent-color3);
+}
+
+#navbar-item-p2::after {
+    background-color: var(--accent-color3);
+}
+
+#navbar-item-p3 {
+    color: var(--accent-color4);
+}
+
+#navbar-item-p3::after {
+    background-color: var(--accent-color4);
+}
+
+#navbar-item-p4 {
+    color: var(--accent-color5);
+}
+
+#navbar-item-p4::after {
+    background-color: var(--accent-color5);
+}
+
+
+/* Main content */
+.main {
+    width: 70%;
+    margin-top: 7rem; /* Add a top margin to avoid content overlay */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#main-section-intro-header {
+    color: var(--accent-color1)
+}
+#main-section-p1-header {
+    color: var(--accent-color2)
+}
+#main-section-p2-header {
+    color: var(--accent-color3)
+}
+#main-section-p3-header {
+    color: var(--accent-color4)
+}
+#main-section-p4-header {
+    color: var(--accent-color5)
+}
+
+@media screen and (max-width: 1400px) {
+
+
+    #title-span {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    .navbar-item-container {
+        display: none;
+    }
+}
